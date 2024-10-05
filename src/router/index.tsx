@@ -3,11 +3,14 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import ProtectedRoute from "../components/auth/ProtectedRoute";
 import PageNotFound from "../pages/PageNotFound";
 import RootLayout from "../pages/Layout";
-import ErrorHandler from "../components/eroors/ErrorHandler";
-import ProtectedRoute from "../components/auth/ProtectedRoute";
+import HomePage from "../pages";
 import RegisterPage from "../pages/Register";
+import TodosPage from "../pages/Todos";
+import { LoginPage } from "../pages/Login";
+import ErrorHandler from "../components/eroors/ErrorHandler";
 
 const storageKey = "loggedInUser";
 const userDataString = localStorage.getItem(storageKey);
@@ -18,7 +21,7 @@ const router = createBrowserRouter(
     <>
       {/* Root Layout */}
       <Route path="/" element={<RootLayout />} errorElement={<ErrorHandler />}>
-        {/* <Route
+        <Route
           index
           element={
             <ProtectedRoute
@@ -65,9 +68,7 @@ const router = createBrowserRouter(
               <LoginPage />
             </ProtectedRoute>
           }
-        /> */}
-
-
+        />
         <Route
           path="register"
           element={
@@ -80,8 +81,6 @@ const router = createBrowserRouter(
             </ProtectedRoute>
           }
         />
-
-
       </Route>
 
       {/* Page Not Found */}

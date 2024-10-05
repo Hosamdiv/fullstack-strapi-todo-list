@@ -27,6 +27,8 @@ const RegisterPage = () => {
   } = useForm<IFormInput>({
     resolver: yupResolver(registerSchema),
   });
+
+  
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     console.log("Data Register", data);
     setIsLoading(true);

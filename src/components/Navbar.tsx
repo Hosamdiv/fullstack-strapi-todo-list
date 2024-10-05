@@ -9,24 +9,24 @@ const Navbar = () => {
     localStorage.removeItem(storageKey);
     setTimeout(() => {
       location.replace(pathname);
-    }, 1500);
+    }, 500);
   };
   return (
-    <nav className="max-w-lg mx-auto mt-7 mb-20 px-3 py-5 rounded-md">
+    <nav className="max-w-lg mx-auto mt-7 mb-20 bg-indigo-600 px-3 py-5 rounded-md">
       <ul className="flex items-center justify-between">
-        <li className="text-black duration-200 font-semibold text-lg">
+        <li className="hover:bg-indigo-500 text-white rounded-md p-2 duration-200 font-semibold text-lg">
           <NavLink to="/">Home</NavLink>
         </li>
         {userData ? (
-          <div className="flex items-center text-indigo-600 space-x-4">
-            <li className="duration-200 text-lg">
+          <div className="flex items-center  text-white space-x-4">
+            <li className="duration-200 hover:bg-indigo-500 rounded-md p-1 text-lg">
               <NavLink to="/todos">todos</NavLink>
             </li>
-            <li className="duration-200 text-lg">
+            <li className="duration-200 hover:bg-indigo-500 rounded-md p-1 text-lg">
               <NavLink to="/profile">Profile</NavLink>
             </li>
             <button
-              className="bg-indigo-500 text-white p-2 rounded-md cursor-pointer"
+              className="hover:bg-indigo-500 text-white p-2 rounded-md cursor-pointer"
               onClick={onLogout}
             >
               Logout
@@ -34,10 +34,10 @@ const Navbar = () => {
           </div>
         ) : (
           <p className="flex items-center space-x-3">
-            <li className="text-black duration-200 font-semibold text-lg">
+            <li className="hover:bg-indigo-500 rounded-md text-white p-1 duration-200 font-semibold text-lg">
               <NavLink to="/register">Register</NavLink>
             </li>
-            <li className="text-black duration-200 font-semibold text-lg">
+            <li className="hover:bg-indigo-500 rounded-md text-white p-1 duration-200 font-semibold text-lg">
               <NavLink to="/login">Login</NavLink>
             </li>
           </p>

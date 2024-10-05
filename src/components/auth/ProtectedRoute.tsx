@@ -14,6 +14,7 @@ const ProtectedRoute = ({
   children,
   data,
 }: IProps) => {
+  
   if (!isAllowed) return <Navigate to={redirectPath} replace state={data} />;
   return children;
 };
