@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axiosInstance from "../config/axios.config";
-import {  AxiosRequestConfig } from "axios";
+import { AxiosRequestConfig } from "axios";
 
 interface IAuthenticatedQuery {
   queryKey: string[];
@@ -16,8 +16,6 @@ const useAuthenticatedQuery = ({
     queryKey,
     queryFn: async () => {
       const { data } = await axiosInstance.get(url, config);
-
-      console.log({ data });
 
       return data;
     },
